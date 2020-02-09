@@ -11,27 +11,6 @@ namespace Demo_AwaitTask
 {
     public class TplExample
     {
-        public async void Task1()
-        {
-            Console.WriteLine($"Task1 : {Thread.CurrentThread.ManagedThreadId}");
-            await Task.Delay(4000);
-            Console.WriteLine($"Task1 : {Thread.CurrentThread.ManagedThreadId}");
-            Console.WriteLine("Task1");
-        }
-
-        public async Task Task2()
-        {
-            Console.WriteLine($"Task2 : {Thread.CurrentThread.ManagedThreadId}");
-            await Task.Delay(2000);
-            Console.WriteLine($"Task2 : {Thread.CurrentThread.ManagedThreadId}");
-            Console.WriteLine("Containue from Task1");
-        }
-
-        public string gogo()
-        {
-            return "gogo";
-        }
-
         public async Task<String> getClient(string url)
         {
             await Task.Delay(10000);
