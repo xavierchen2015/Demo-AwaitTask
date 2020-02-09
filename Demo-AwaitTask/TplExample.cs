@@ -54,7 +54,7 @@ namespace Demo_AwaitTask
         public async Task<int> MakeCoffee()
         {
             Console.WriteLine("=== Making Coffee ===");
-            await Task.Delay(20000);
+            await Task.Delay(8000);
             Console.WriteLine($"MakeCoffee ManagedThreadId: {Thread.CurrentThread.ManagedThreadId}");
 
             Console.WriteLine("=== Making Coffee done ===");

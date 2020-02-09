@@ -18,12 +18,14 @@ namespace Demo_AwaitTask
             TplExample tpl = new TplExample();
             Console.WriteLine("Start Cooking !!!");
 
-            var makecoffee = await tpl.MakeCoffee();
+            var makecoffee =  tpl.MakeCoffee();
             Console.WriteLine("making coffee......");
+
             var grilledtoast =  tpl.GrilledToast();
             Console.WriteLine("grilling toast......");
 
-            var fryegg = tpl.FryEgg();
+            var fryegg = await tpl.FryEgg();
+            Console.WriteLine(fryegg);
             Console.WriteLine("frying egg......");
 
             var frysteak = tpl.FrySteak();
@@ -31,10 +33,8 @@ namespace Demo_AwaitTask
             await frysteak;
             await grilledtoast;
             Console.WriteLine("return  grilledtoast ");
-            int result = await fryegg;
-            Console.WriteLine(result);
 
-            //await makecoffee;
+            await makecoffee;
 
             Console.WriteLine("Completed !!!");
             Console.WriteLine(DateTime.Now);
